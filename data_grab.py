@@ -11,9 +11,9 @@ for i in range(wb.nsheets):
     sheet = wb.sheet_by_index(i)
     with open("data.csv", "w") as file:
         writer = csv.writer(file, delimiter = ",")
-        header = [cell.value for cell in sheet.row(0)]
-        writer.writerow(header)
         for row_idx in range(1, sheet.nrows):
+            if "Major" not in str(sheet.row(row_idx)[1]):
+                continue
             row = [int(cell.value) if isinstance(cell.value, float) else cell.value
-                   for cell in sheet.row(row_idx)]
+               for cell in sheet.row(row_idx)]
             writer.writerow(row)
