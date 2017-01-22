@@ -1,0 +1,142 @@
+body{
+  background-image: url("https://cdn.lafayette.edu/images/footer/campus_aerial-1440x810.jpg");
+  background-size: auto;
+  font-size: 18pt;
+  font-family: Montserrat;
+}
+
+h1 {
+  font-size: 60pt;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px black;
+  margin-top:-22px;
+  margin-bottom: -40px;
+  padding-bottom: 30px;
+  font-family: Montserrat;
+}
+
+h2 {
+  font-style: italic;
+  text-shadow:1.5px 1.5px black;
+  text-align: center;
+  color: white;
+}
+
+div a, #input {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #471b21;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    text-shadow: 1.5px 1.5px black;
+    font-family: Montserrat;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px !important;
+    margin-left: 50px;
+}
+
+#nameinput {
+  display: block;
+  text-align: center;
+}
+
+#sidebar {
+  float:left;
+  width:250px;
+  margin-top: 45px;
+  padding: 3px;
+  padding: 3px;
+  border: 3px solid green;
+  border-radius: 15px 50px;
+  background-color: white;
+  opacity: 0.9;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+#si {
+  text-align: center;
+}
+
+#input, #input  {
+  background-color: rgba(0,0,0,.4);
+  padding: 8px;
+  color: white;
+}
+
+#nav {
+  text-shadow:1.5px 1.5px green;
+  text-align: center;
+  color: black;
+  font-size: 25px;
+  margin-bottom: -8px;
+  margin-top: 10px;
+}
+
+#sidebaritems {
+  font-size: 20px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+    color: white;
+    text-shadow:1.5px 1.5px black;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/*--------------------------------------------*/
+
+ul {
+  list-style-type:none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.inputbox {
+  background-color: transparent;
+  border-style: solid;
+  border-top: 2px;
+  border-left: 2px;
+  border-right: 2px;
+  color: white;
+  font-size: 20pt;
+  height: 30px;
+}
