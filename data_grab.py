@@ -6,16 +6,14 @@
 
 from xlrd import open_workbook
 import csv
-wb = xlrd.open_workbook('my_file_name.xls')
-with open(wb, "w") as fin:
-    writer = csv.writer(fin, delimiter = ",")
-    header = [cell.value for cell in sheet.row(0)]
-    writer.writerow(header)
-    for row_idx in range(1, sheet.nrows):
-        row = [int(cell.value) if isinstance(cell.value, float) else cell.value
-               for cell in sheet.row(row_idx)]
-        writer.writerow(row)
-
-
-if __name__ == '__main__':
-    name = sys.argv[1]
+wb = open_workbook('Williams_Major_Reqs.xlsx')
+for i in range(wb.nsheets):
+    sheet = wb.sheet_by_index(i)
+    with open("data.csv", "w") as file:
+        writer = csv.writer(file, delimiter = ",")
+        header = [cell.value for cell in sheet.row(0)]
+        writer.writerow(header)
+        for row_idx in range(1, sheet.nrows):
+            row = [int(cell.value) if isinstance(cell.value, float) else cell.value
+                   for cell in sheet.row(row_idx)]
+            writer.writerow(row)
