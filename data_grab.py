@@ -6,7 +6,7 @@
 
 from xlrd import open_workbook
 import csv
-wb = open_workbook(name)
+wb = open_workbook('Williams_Major_Reqs.xlsx')
 for i in range(wb.nsheets):
     sheet = wb.sheet_by_index(i)
     with open("data/%s.csv" %(sheet.name.replace(" ","")), "w") as file:
@@ -18,6 +18,4 @@ for i in range(wb.nsheets):
                    for cell in sheet.row(row_idx)]
             writer.writerow(row)
             
-
-if __name__ == '__main__':
-    name = sys.argv[1]
+#
