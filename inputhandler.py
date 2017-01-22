@@ -20,8 +20,6 @@ class InputHandler(webapp2.RequestHandler):
         html = template.render({})
         self.response.write(html)
 
-        logging.info("input post") #???
-
         major_name = self.request.get("major_name")
 
         #getting user key
@@ -34,5 +32,6 @@ class InputHandler(webapp2.RequestHandler):
             )
         major.put()
 
-        template = jinja_environment.get_template("input.html")
-        html = template.render({"major name": major_name,})
+        # template = jinja_environment.get_template("info.html")
+        # html = template.render({"major name": major_name,})
+        # self.response.write(html)
