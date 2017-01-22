@@ -6,10 +6,10 @@
 
 from xlrd import open_workbook
 import csv
-wb = open_workbook('el_Names.xls')
+wb = open_workbook('Williams_Major_Reqs.xlsx')
 for i in range(wb.nsheets):
     sheet = wb.sheet_by_index(i)
-    with open("data/%s.csv" %(sheet.name.replace(" ","")), "w") as file:
+    with open("data.csv", "w") as file:
         writer = csv.writer(file, delimiter = ",")
         header = [cell.value for cell in sheet.row(0)]
         writer.writerow(header)
