@@ -15,5 +15,5 @@ for i in range(wb.nsheets):
             if "Major" not in str(sheet.row(row_idx)[1]):
                 continue
             row = [int(cell.value) if isinstance(cell.value, float) else cell.value
-               for cell in sheet.row(row_idx)]
+               for cell in sheet.row(row_idx) if len(str(cell))>8]
             writer.writerow(row)
