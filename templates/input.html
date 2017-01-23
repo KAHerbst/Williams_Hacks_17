@@ -16,16 +16,56 @@
       <span style="font-size:30px;cursor:pointer" id="menu">☰ Menu</span>
     </div>
 
-    <h1> INPUT MAJOR </h1><br>
-    <h2> Major</h2>
+    <h2>Input Major</h2>
 
     <div id="input">
       <form action="/input" input="text" method="post">
-          Year:
-          <input type="number" name="year" class="inputbox"><br><br>
-          Major:
-          <input type="text" name="major_name" class="inputbox"><br><br>
-          <input type="submit" value="Add">
+        Year:
+        <input type="number" name="year" class="inputbox"><br><br>
+        Major:
+        <input list="majors" name="major_name" class="inputbox">
+        <datalist id="majors">
+          <option value="American Studies">
+          <option value="Anthropology">
+          <option value="Arabic Studies">
+          <option value="Art (History)">
+          <option value="Art(Studio)">
+          <option value="Art (History and Practice)">
+          <option value="Asian Studies", "Astronomy">
+          <option value="Astrophysics">
+          <option value="Biology">
+          <option value="Chemistry">
+          <option value="Chinese">
+          <option value="Classics (Greek and Latin) Language">
+          <option value="Classics (Greek and Latin) Civilization">
+          <option value="Comparative Literature Track 1">
+          <option value="Comparative Literature Track 2">
+          <option value="Computer Science">
+          <option value="Economics">
+          <option value="English">
+          <option value="Environmental Policy">
+          <option value="Environmental Science">
+          <option value="French">
+          <option value="Geosciences">
+          <option value="German">
+          <option value="History">
+          <option value="Japanese">
+          <option value="Math">
+          <option value="Music">
+          <option value="Philosophy">
+          <option value="Physics">
+          <option value="Political Economy">
+          <option value="Political Science">
+          <option value="Psychology">
+          <option value="Religion">
+          <option value="Russian">
+          <option value="Sociology">
+          <option value="Spanish">
+          <option value="Statistics">
+          <option value="Theatre">
+          <option value="Women's, Gender, and Sexuality Studies">
+        </datalist> <br> <br>
+        <input type="submit" value="Add" id="submit">
       </form><br>
     </div>
 

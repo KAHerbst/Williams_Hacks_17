@@ -24,6 +24,7 @@ class InfoHandler(webapp2.RequestHandler):
             """
             Pull up major reqs for each major
             """
+            data_grab.data_grab()
 
             template = jinja_environment.get_template("info.html")
             html = template.render({"major_name": major.major_name})

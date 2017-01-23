@@ -8,6 +8,7 @@ jinja_environment = jinja2.Environment(
 
 class Major(ndb.Model):
     major_name = ndb.StringProperty(required=True)
+    # major_reqs = ndb.StringProperty(repeated=True)
     userID = ndb.StringProperty(required=True)
 
 class CssiUser(ndb.Model):

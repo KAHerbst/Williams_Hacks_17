@@ -31,7 +31,3 @@ class InputHandler(webapp2.RequestHandler):
             userID=userID,
             )
         major.put()
-
-        # template = jinja_environment.get_template("info.html")
-        # html = template.render({"major name": major_name,})
-        # self.response.write(html)
