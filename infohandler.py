@@ -33,7 +33,7 @@ class InfoHandler(webapp2.RequestHandler):
                     if major.major_name == area_study[0]:
                         reqs.append(area_study[2:])
 
-            major.major_reqs = str(reqs)
+            major.major_reqs = str(reqs[0])
 
             template = jinja_environment.get_template("info.html")
             html = template.render({"major_name": major.major_name,
