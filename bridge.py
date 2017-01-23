@@ -8,9 +8,9 @@ MAJORS = ["American Studies", "Anthropology", "Arabic Studies", "Art (History)",
           "French", "Geosciences","German","History","Japanese","Math","Music","Philosophy",
           "Physics","Political Economy","Political Science","Psychology","Religion","Russian",
           "Sociology","Spanish","Statistics","Theatre","Women's, Gender, & Sexuality Studies"]
-major = query
+
 with open("data.csv") as fin:
     f1 = list(csv.reader(fin))
     for line in f1:
         if line[0] == major:
-            return line[1:]
+            return [x for x in line[1:] if len(x) > 0]
