@@ -17,15 +17,19 @@ class InfoHandler(webapp2.RequestHandler):
         major_query = classes.Major.query(classes.Major.userID == user)
         majors = major_query.fetch()
 
+        d = dict()
+
         for major in majors:
 
-            # if datetime.datetime.today().date() == datetime.datetime.combine(contact.dateOfReminder, datetime.time.min).date():
-            #     self.response.write("<script> alert('CALL " + contact.contactName.upper() + "'); </script>")
             """
             Pull up major reqs for each major
             """
-            data_grab.data_grab()
 
             template = jinja_environment.get_template("info.html")
             html = template.render({"major_name": major.major_name})
             self.response.write(html)
+            with open("data.csv") as fin:
+                f1 = list(csv.reader(fin))
+                for area_study in f1:
+                    if major == area_study[0]:
+                        d[major] = area_study[1:]
