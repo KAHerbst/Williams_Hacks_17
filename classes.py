@@ -8,7 +8,7 @@ jinja_environment = jinja2.Environment(
 
 class Major(ndb.Model):
     major_name = ndb.StringProperty(required=True)
-    # major_reqs = ndb.StringProperty(repeated=True)
+    major_reqs = ndb.StringProperty(required=False)
     userID = ndb.StringProperty(required=True)
 
 class CssiUser(ndb.Model):
@@ -22,6 +22,5 @@ class CssiUser(ndb.Model):
     preferences, etc, you need to create a Datastore model like this
     example).
     """
-
     first_name = ndb.StringProperty()
     last_name = ndb.StringProperty()

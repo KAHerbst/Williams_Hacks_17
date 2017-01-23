@@ -1,4 +1,4 @@
-import webapp2, jinja2, os, logging
+import webapp2, jinja2, os, logging, csv
 from google.appengine.api import users
 from google.appengine.ext import ndb
 
@@ -17,19 +17,25 @@ class InfoHandler(webapp2.RequestHandler):
         major_query = classes.Major.query(classes.Major.userID == user)
         majors = major_query.fetch()
 
-        d = dict()
-
         for major in majors:
-
             """
             Pull up major reqs for each major
             """
+            # template = jinja_environment.get_template("info.html")
+            # html = template.render({"major_name": major.major_name})
+            # self.response.write(html)
 
-            template = jinja_environment.get_template("info.html")
-            html = template.render({"major_name": major.major_name})
-            self.response.write(html)
+            reqs = []
+
             with open("data.csv") as fin:
                 f1 = list(csv.reader(fin))
                 for area_study in f1:
-                    if major == area_study[0]:
-                        d[major] = area_study[1:]
+                    if major.major_name == area_study[0]:
+                        reqs.append(area_study[2:])
+
+            major.major_reqs = str(reqs)
+
+            template = jinja_environment.get_template("info.html")
+            html = template.render({"major_name": major.major_name,
+                                    "major_reqs": major.major_reqs})
+            self.response.write(html)
